@@ -3,6 +3,7 @@ import groq from "groq";
 import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
+import Hero from "../components/hero";
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
@@ -16,18 +17,13 @@ const query = groq`
 `;
 
 const Index = ({ frontPage }) => {
-  console.log(frontPage.post);
+  console.log(frontPage);
   return (
-    <div>
-      <div>vercel test</div>
+    <>
+      {/* heading: contact, calendar?, gallery?, references? */}
+      <Hero heroImg={frontPage.mainImage} />
       <h1>{frontPage.heading}</h1>
       <PortableText value={frontPage.description} />
-      <div>
-        <img
-          src={urlFor(frontPage.mainImage).width(50).url()}
-          alt={`main picture`}
-        />
-      </div>
       <h1>Welcome to a blog!</h1>
       {frontPage.post.length > 0 &&
         frontPage.post.map(
@@ -41,7 +37,7 @@ const Index = ({ frontPage }) => {
               </li>
             )
         )}
-    </div>
+    </>
   );
 };
 
