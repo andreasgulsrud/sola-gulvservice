@@ -19,7 +19,7 @@ const Index = ({ frontPage }) => {
   console.log(frontPage.post);
   return (
     <div>
-      <div>test</div>
+      <div>tests</div>
       <h1>{frontPage.heading}</h1>
       <PortableText value={frontPage.description} />
       <div>
