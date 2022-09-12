@@ -24,7 +24,7 @@ const Index = ({ frontPage }) => {
       <Hero heroImg={frontPage.mainImage} />
       <h1>{frontPage.heading}</h1>
       <PortableText value={frontPage.description} />
-      <h1>Welcome to a blog!</h1>
+      <h1 className="text-red-500">Welcome to a blog!</h1>
       {frontPage.post.length > 0 &&
         frontPage.post.map(
           ({ _id, title = "", slug = "", publishedAt = "" }) =>

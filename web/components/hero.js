@@ -23,6 +23,7 @@ const Index = ({ heroImg }) => {
           width="1800px"
         />
       </div>
+      <p className="mb-8 border-2 border-red-500">gsdgsdg</p>
     </>
   );
 };
