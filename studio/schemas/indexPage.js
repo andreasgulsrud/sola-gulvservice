@@ -1,6 +1,6 @@
 export default {
-  name: "frontPage",
-  title: "Front page",
+  name: "indexPage",
+  title: "Indexpage",
   type: "document",
   fields: [
     {

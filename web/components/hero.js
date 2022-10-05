@@ -12,20 +12,21 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Index = ({ heroImg }) => {
+const Hero = ({ heroImg }) => {
   return (
     <>
-      <div className={styles.imageContainer}>
-        <Image
-          src={urlFor(heroImg).url()}
-          layout="fill"
-          height="1200px"
-          width="1800px"
-        />
-      </div>
-      <p className="mb-8 border-2 border-red-500">gsdgsdg</p>
+      {heroImg && (
+        <div className={styles.imageContainer}>
+          <Image
+            src={urlFor(heroImg).url()}
+            layout="fill"
+            height="1200px"
+            width="1800px"
+          />
+        </div>
+      )}
     </>
   );
 };
 
-export default Index;
+export default Hero;

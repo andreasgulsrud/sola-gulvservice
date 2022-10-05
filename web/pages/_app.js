@@ -9,15 +9,11 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Sola Gulvservice</title>
         <link rel="shortcut icon" href="/favicon.ico" />
-        <meta
-          name="title"
-          property="og:title"
-          content="McKinsey market report"
-        />
+        <meta name="title" property="og:title" content="Sola Gulvservice AS" />
         <meta
           name="description"
           property="og:description"
-          content="McKinsey market report, Norge i morgen"
+          content="Sola Gulvservice AS"
         />
       </Head>
       <Layout>
