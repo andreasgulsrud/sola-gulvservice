@@ -6,7 +6,6 @@ import { PortableText } from "@portabletext/react";
 import Hero from "../components/hero";
 import GalleryImage from "../components/galleryImage";
 import styled from "styled-components";
-import { Parallax } from "react-scroll-parallax";
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
