@@ -4,16 +4,20 @@ import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
 import Hero from "../components/hero";
-import ImageGallery from "../components/imageGallery";
+import GalleryImage from "../components/galleryImage";
+import styled from "styled-components";
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
 
 const query = groq`
-  *[_type == "indexPage"][0] {
+  *[_type == 'indexPage'][0] {
     ...,
-    "post": *[_type == "post"]
+    'post': *[_type == 'post'],
+    'referenceImages': *[_type == 'imageGallery'] {
+      ...,
+    },
   }
 `;
 
@@ -22,7 +26,7 @@ const Index = ({ indexPage }) => {
   return (
     <>
       {/* heading: contact, calendar?, gallery?, references? */}
-      <Hero heroImg={indexPage?.mainImage} />
+      {/* <Hero heroImg={indexPage?.mainImage} /> */}
       <h1>{indexPage?.heading}</h1>
       <PortableText value={indexPage?.description} />
       <h1 className="text-red-500">Welcome to a blog!</h1>
@@ -38,6 +42,19 @@ const Index = ({ indexPage }) => {
               </li>
             )
         )}
+
+      {indexPage.referenceImages.map((test) => {
+        console.log("test**", test);
+        return test.galleryImages.map((images) => {
+          console.log("********", images.caption);
+          return (
+            <GalleryImage
+              galleryImage={images.asset._ref}
+              caption={images.caption}
+            />
+          );
+        });
+      })}
     </>
   );
 };
