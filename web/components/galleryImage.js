@@ -11,11 +11,11 @@ function urlFor(source) {
 
 const GalleryImageWrapper = styled.div`
   border: 2px solid green;
-  width: 500px;
+  max-width: 100%;
   height: auto;
   img {
     width: 100%;
-    height: auto;
+    /* height: auto; */
   }
 `;
 
@@ -24,7 +24,13 @@ const GalleryImage = ({ galleryImage, caption }) => {
     <>
       {galleryImage && (
         <GalleryImageWrapper>
-          <img src={urlFor(galleryImage).url()} />
+          <Image
+            src={urlFor(galleryImage).url()}
+            width="1200"
+            height="800"
+            layout="intrinsic"
+            objectFit="cover"
+          />
         </GalleryImageWrapper>
       )}
     </>

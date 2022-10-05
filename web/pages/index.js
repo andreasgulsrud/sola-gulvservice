@@ -6,6 +6,7 @@ import { PortableText } from "@portabletext/react";
 import Hero from "../components/hero";
 import GalleryImage from "../components/galleryImage";
 import styled from "styled-components";
+import { Parallax } from "react-scroll-parallax";
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
@@ -21,8 +22,15 @@ const query = groq`
   }
 `;
 
+const ImageGalleryContainer = styled.section`
+  border: 3px solid red;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 150px;
+`;
+
 const Index = ({ indexPage }) => {
-  console.log(indexPage);
+  // console.log(indexPage);
   return (
     <>
       {/* heading: contact, calendar?, gallery?, references? */}
@@ -42,21 +50,22 @@ const Index = ({ indexPage }) => {
               </li>
             )
         )}
-
-      {indexPage.referenceImages.map((test) => {
-        console.log("test**", test);
-        return test.galleryImages.map((images) => {
-          console.log("********", images.caption);
-          return (
-            <div key={images.caption}>
-              <GalleryImage
-                galleryImage={images.asset._ref}
-                caption={images.caption}
-              />
-            </div>
-          );
-        });
-      })}
+      <ImageGalleryContainer>
+        {indexPage.referenceImages.map((test) => {
+          console.log("test**", test);
+          return test.galleryImages.map((images) => {
+            // console.log("********", images.caption);
+            return (
+              <div key={images.caption}>
+                <GalleryImage
+                  galleryImage={images.asset._ref}
+                  caption={images.caption}
+                />
+              </div>
+            );
+          });
+        })}
+      </ImageGalleryContainer>
     </>
   );
 };
