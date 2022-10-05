@@ -9,9 +9,9 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const GalleryImageWrapper = styled.section`
+const GalleryImageWrapper = styled.div`
   border: 2px solid green;
-  width: 400px;
+  width: 500px;
   height: auto;
   img {
     width: 100%;

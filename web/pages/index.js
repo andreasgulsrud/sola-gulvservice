@@ -26,10 +26,10 @@ const Index = ({ indexPage }) => {
   return (
     <>
       {/* heading: contact, calendar?, gallery?, references? */}
-      {/* <Hero heroImg={indexPage?.mainImage} /> */}
+      <Hero heroImg={indexPage?.mainImage} />
       <h1>{indexPage?.heading}</h1>
       <PortableText value={indexPage?.description} />
-      <h1 className="text-red-500">Welcome to a blog!</h1>
+      <h1>Welcome to a blog!</h1>
       {indexPage.post.length > 0 &&
         indexPage.post.map(
           ({ _id, title = "", slug = "", publishedAt = "" }) =>
@@ -48,10 +48,12 @@ const Index = ({ indexPage }) => {
         return test.galleryImages.map((images) => {
           console.log("********", images.caption);
           return (
-            <GalleryImage
-              galleryImage={images.asset._ref}
-              caption={images.caption}
-            />
+            <div key={images.caption}>
+              <GalleryImage
+                galleryImage={images.asset._ref}
+                caption={images.caption}
+              />
+            </div>
           );
         });
       })}
