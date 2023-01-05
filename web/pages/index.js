@@ -4,6 +4,7 @@ import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
 import Hero from "../components/hero";
+import Header from "../components/header";
 import GalleryImage from "../components/galleryImage";
 import styled from "styled-components";
 
@@ -26,6 +27,8 @@ const ImageGalleryContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 0 150px;
+  column-gap: 22px;
+  row-gap: 22px;
 `;
 
 const Index = ({ indexPage }) => {
@@ -33,6 +36,7 @@ const Index = ({ indexPage }) => {
   return (
     <>
       {/* heading: contact, calendar?, gallery?, references? */}
+      <Header></Header>
       <Hero heroImg={indexPage?.mainImage} />
       <h1>{indexPage?.heading}</h1>
       <PortableText value={indexPage?.description} />

@@ -10,12 +10,15 @@ function urlFor(source) {
 }
 
 const GalleryImageWrapper = styled.div`
-  border: 2px solid green;
-  max-width: 100%;
-  height: auto;
+  display: flex;
+  filter: grayscale(80%);
+  transition: 0.5s;
+  &:hover {
+    filter: none;
+  }
   img {
     width: 100%;
-    /* height: auto; */
+    height: 100%;
   }
 `;
 
