@@ -11,6 +11,7 @@ const HeadingWrapper = styled.div`
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
+  z-index: 1000;
   &.hide {
     top: -7rem;
   }

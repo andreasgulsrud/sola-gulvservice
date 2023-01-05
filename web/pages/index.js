@@ -23,7 +23,7 @@ const query = groq`
 `;
 
 const ImageGalleryContainer = styled.section`
-  border: 3px solid red;
+  /* border: 3px solid red; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 0 150px;

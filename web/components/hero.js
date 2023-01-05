@@ -12,12 +12,18 @@ function urlFor(source) {
   return builder.image(source);
 }
 
+const HeroWrapper = styled.section`
+  /* border: 1px solid green; */
+`;
+
 const ImageContainer = styled.div`
-  border: 1px solid red;
-  width: 40%;
-  height: 50vh;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  max-width: 60%;
+  height: auto;
+  filter: grayscale(75%);
   img {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 100%;
     max-height: 100%;
   }
@@ -26,11 +32,13 @@ const ImageContainer = styled.div`
 const Hero = ({ heroImg }) => {
   return (
     <>
-      {heroImg && (
-        <ImageContainer>
-          <img src={urlFor(heroImg).url()} />
-        </ImageContainer>
-      )}
+      <HeroWrapper>
+        {heroImg && (
+          <ImageContainer>
+            <img src={urlFor(heroImg).url()} />
+          </ImageContainer>
+        )}
+      </HeroWrapper>
     </>
   );
 };
