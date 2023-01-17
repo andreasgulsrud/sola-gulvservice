@@ -64,8 +64,8 @@ const Header = () => {
       <HeadingWrapper
         className={`header ${scrollDirection === "down" ? "hide" : "show"}`}
       >
-        <Heading>SOLA</Heading>
-        <Subheading>GULVSERVICE</Subheading>
+        <Heading>ABCD</Heading>
+        <Subheading>QWERTYASDF</Subheading>
       </HeadingWrapper>
     </>
   );

@@ -5,7 +5,8 @@ import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
 import Hero from "../components/hero";
 import Header from "../components/header";
-import GalleryImage from "../components/galleryImage";
+import Footer from "../components/footer";
+import GalleryImage from "../components/galleryImage/GalleryImage";
 import styled from "styled-components";
 
 function urlFor(source) {
@@ -23,10 +24,10 @@ const query = groq`
 `;
 
 const ImageGalleryContainer = styled.section`
-  /* border: 3px solid red; */
+  border: 1px solid red;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0 150px;
+  padding: 200px 150px;
   column-gap: 22px;
   row-gap: 22px;
 `;
@@ -36,12 +37,12 @@ const Index = ({ indexPage }) => {
   return (
     <>
       {/* heading: contact, calendar?, gallery?, references? */}
-      <Header></Header>
+      <Header />
       <Hero heroImg={indexPage?.mainImage} />
-      <h1>{indexPage?.heading}</h1>
+      <h5>{indexPage?.heading}</h5>
       <PortableText value={indexPage?.description} />
-      <h1>Welcome to a blog!</h1>
-      {indexPage.post.length > 0 &&
+      <h5>Welcome to a blog!</h5>
+      {/* {indexPage.post.length > 0 &&
         indexPage.post.map(
           ({ _id, title = "", slug = "", publishedAt = "" }) =>
             slug && (
@@ -52,23 +53,23 @@ const Index = ({ indexPage }) => {
                 ({new Date(publishedAt).toDateString()})
               </li>
             )
-        )}
+        )} */}
       <ImageGalleryContainer>
-        {indexPage.referenceImages.map((test) => {
-          console.log("test**", test);
-          return test.galleryImages.map((images) => {
+        {indexPage.referenceImages.map((refImages) => {
+          return refImages.galleryImages.map((refImage) => {
             // console.log("********", images.caption);
             return (
-              <div key={images.caption}>
+              <div key={refImage.caption}>
                 <GalleryImage
-                  galleryImage={images.asset._ref}
-                  caption={images.caption}
+                  galleryImage={refImage.asset._ref}
+                  caption={refImage.caption}
                 />
               </div>
             );
           });
         })}
       </ImageGalleryContainer>
+      <Footer />
     </>
   );
 };
