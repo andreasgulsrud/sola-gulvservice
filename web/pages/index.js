@@ -1,4 +1,3 @@
-import Link from "next/link";
 import groq from "groq";
 import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
@@ -36,13 +35,15 @@ const Index = ({ indexPage }) => {
   // console.log(indexPage);
   return (
     <>
-      {/* heading: contact, calendar?, gallery?, references? */}
-      <Header />
-      <Hero heroImg={indexPage?.mainImage} />
-      <h5>{indexPage?.heading}</h5>
-      <PortableText value={indexPage?.description} />
-      <h5>Welcome to a blog!</h5>
-      {/* {indexPage.post.length > 0 &&
+      <main className="homeWrapper">
+        {/* heading: contact, calendar?, gallery?, references? */}
+        <Header />
+        <Hero heroImg={indexPage?.mainImage} />
+
+        <h5>{indexPage?.heading}</h5>
+        <PortableText value={indexPage?.description} />
+        <h5>Welcome to a blog!</h5>
+        {/* {indexPage.post.length > 0 &&
         indexPage.post.map(
           ({ _id, title = "", slug = "", publishedAt = "" }) =>
             slug && (
@@ -54,21 +55,22 @@ const Index = ({ indexPage }) => {
               </li>
             )
         )} */}
-      <ImageGalleryContainer>
-        {indexPage.referenceImages.map((refImages) => {
-          return refImages.galleryImages.map((refImage) => {
-            // console.log("********", images.caption);
-            return (
-              <div key={refImage.caption}>
-                <GalleryImage
-                  galleryImage={refImage.asset._ref}
-                  caption={refImage.caption}
-                />
-              </div>
-            );
-          });
-        })}
-      </ImageGalleryContainer>
+        <ImageGalleryContainer>
+          {indexPage.referenceImages.map((refImages) => {
+            return refImages.galleryImages.map((refImage) => {
+              // console.log("********", images.caption);
+              return (
+                <div key={refImage.caption}>
+                  <GalleryImage
+                    galleryImage={refImage.asset._ref}
+                    caption={refImage.caption}
+                  />
+                </div>
+              );
+            });
+          })}
+        </ImageGalleryContainer>
+      </main>
       <Footer />
     </>
   );

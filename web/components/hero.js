@@ -5,6 +5,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
 import client from "../client";
 import styled from "styled-components";
+import FadeInSection from "./fadeInSection/FadeInSection";
 
 const builder = imageUrlBuilder(client);
 
