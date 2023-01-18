@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import css from "./Footer.module.css";
 
-const Footer = () => {
+const Footer = ({ subheading, contactName, contactPhone, contactMail }) => {
   return (
     <>
       <footer className={classNames(css.footerWrapper)}>
@@ -10,10 +10,10 @@ const Footer = () => {
           <p className={css.footerLogoLower}>QWERTYASDFE</p>
         </section>
         <section className={css.footerInfoWrapper}>
-          <h2>Avtal en befaring</h2>
-          <p>Navn Navnesen</p>
-          <p>+47 45 678 91</p>
-          <p>post@mittdomene.no</p>
+          <h2>{subheading}</h2>
+          <p>{contactName}</p>
+          <p>{contactPhone}</p>
+          <p>{contactMail}</p>
         </section>
       </footer>
     </>

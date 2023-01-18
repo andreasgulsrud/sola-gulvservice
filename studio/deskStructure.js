@@ -12,15 +12,7 @@ export default () =>
       S.listItem()
         .title("Indexpage")
         .child(S.document().schemaType("indexPage").documentId("indexPage")),
-      S.listItem()
-        .title("Image gallery")
-        .child(
-          S.document().schemaType("imageGallery").documentId("imageGallery")
-        ),
       ...S.documentTypeListItems().filter(
-        (listItem) =>
-          !["siteSettings", "indexPage", "imageGallery"].includes(
-            listItem.getId()
-          )
+        (listItem) => !["siteSettings", "indexPage"].includes(listItem.getId())
       ),
     ]);

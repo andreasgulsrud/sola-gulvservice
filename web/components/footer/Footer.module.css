@@ -38,4 +38,5 @@
 .footerInfoWrapper h2 {
   color: #e8e6e1;
   margin-top: 0;
+  max-width: 400px;
 }
