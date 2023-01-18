@@ -65,7 +65,7 @@ const Header = () => {
         className={`header ${scrollDirection === "down" ? "hide" : "show"}`}
       >
         <Heading>ABCD</Heading>
-        <Subheading>QWERTYASDF</Subheading>
+        <Subheading>QWERTYASDFE</Subheading>
       </HeadingWrapper>
     </>
   );

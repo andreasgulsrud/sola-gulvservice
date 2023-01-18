@@ -20,7 +20,7 @@ const GalleryImage = ({ galleryImage, caption }) => {
               src={urlFor(galleryImage).url()}
               width="1200"
               height="800"
-              alt="insert alt text"
+              alt={caption}
             />
           </div>
         </FadeInSection>

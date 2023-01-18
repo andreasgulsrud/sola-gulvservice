@@ -1,0 +1,12 @@
+.imageGalleryContainer {
+  border: 1px solid green;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px 150px;
+  column-gap: 22px;
+  row-gap: 22px;
+}
+
+.imageGalleryContainer:nth-child(odd) {
+  border: 2px solid red;
+}
