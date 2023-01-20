@@ -1,34 +1,5 @@
-import styled from "styled-components";
 import { useEffect, useState } from "react";
-
-const HeadingWrapper = styled.div`
-  background-color: transparent;
-  height: 7rem;
-  padding: 1rem 1rem;
-  position: sticky;
-  top: 0px;
-  z-index: 1000;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
-  z-index: 1000;
-  &.hide {
-    top: -7rem;
-  }
-`;
-
-const Heading = styled.h1`
-  margin: 0;
-  font-size: 3rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-`;
-
-const Subheading = styled.p`
-  margin: 0;
-  font-weight: 300;
-  letter-spacing: 2.4px;
-`;
+import css from "./Header.module.css";
 
 const Header = () => {
   const useScrollDirection = () => {
@@ -61,12 +32,14 @@ const Header = () => {
 
   return (
     <>
-      <HeadingWrapper
-        className={`header ${scrollDirection === "down" ? "hide" : "show"}`}
+      <div
+        className={`${css.header} ${
+          scrollDirection === "down" ? `${css.hide}` : "show"
+        }`}
       >
-        <Heading>ABCD</Heading>
-        <Subheading>QWERTYASDFE</Subheading>
-      </HeadingWrapper>
+        <h1 className={css.heading}>ABCD</h1>
+        <p className={css.subHeading}>QWERTYASDFE</p>
+      </div>
     </>
   );
 };

@@ -1,0 +1,30 @@
+.header {
+  background-color: transparent;
+  height: 7rem;
+  padding: 1rem 1rem;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  z-index: 1000;
+  color: var(--color-extraDark-grey);
+}
+
+.header.hide {
+  top: -7rem;
+}
+
+.heading {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.subHeading {
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 2.4px;
+}

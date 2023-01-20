@@ -3,11 +3,12 @@ import groq from "groq";
 import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
-import Hero from "../components/hero";
-import Header from "../components/header";
+import Hero from "../components/hero/Hero";
+import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import ImageGallery from "../components/imageGallery/ImageGallery";
 import GalleryImage from "../components/galleryImage/GalleryImage";
+import DescField from "../components/descriptionField/DescField";
 import styled from "styled-components";
 
 function urlFor(source) {
@@ -45,17 +46,11 @@ const Index = ({ indexPage }) => {
             content={urlFor(indexPage.settings.metaImage).url()}
           />
         </Head>
-        {/* heading: contact, calendar?, gallery?, references? */}
         <Header />
         <Hero heroImg={indexPage?.mainImage} />
-        <h5>{indexPage?.heading}</h5>
-        <PortableText value={indexPage?.description} />
-
-        {indexPage.imageGalleryHeading && (
-          <h5>{indexPage.imageGalleryHeading}</h5>
-        )}
+        <DescField title={indexPage?.heading} desc={indexPage?.description} />
         {indexPage.galleryImages && (
-          <ImageGallery>
+          <ImageGallery imageGalleryHeading={indexPage.imageGalleryHeading}>
             {indexPage.galleryImages.map((refImage, index) => {
               // console.log(refImage);
               return (

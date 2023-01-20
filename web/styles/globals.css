@@ -16,6 +16,32 @@ a {
   scroll-behavior: smooth;
 }
 
+:root {
+  /* FONTS */
+  font-size: 16px;
+
+  /* COLORS */
+  /* primary */
+  --color-dark-green: #1b2d2a;
+  --color-medium-green: #7e8d85;
+  --color-light-green: #b3bfb8;
+
+  /* secondary */
+  --color-extraDark-grey: #393939;
+  --color-dark-grey: #737373;
+  --color-medium-grey: #cccccc;
+  --color-light-grey: #e6e6e6;
+  --color-extraLight-grey: #fafafa;
+  --color-stripes-grey: #d8d8d8;
+
+  /* tertiary */
+  --color-dark-yellow: #f4e04d;
+  --color-light-yellow: #f6f1d1;
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
 @font-face {
   font-family: "ocr-b-std";
   src: url("https://use.typekit.net/af/48c34d/000000000000000000012e5d/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
